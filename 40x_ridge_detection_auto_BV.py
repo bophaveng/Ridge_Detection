@@ -1,4 +1,4 @@
-# Externe Klassen werden importiert
+# Externe Klassen, werden importiert
 from ij import IJ, WindowManager, ImagePlus
 from ij.measure import ResultsTable
 from ij.plugin.filter import AVI_Writer
