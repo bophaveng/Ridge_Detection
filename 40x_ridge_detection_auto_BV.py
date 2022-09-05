@@ -10,7 +10,7 @@ listeDateinamen = os.listdir(ordnerName)
 
 # Parameterliste
 parameterListRadius = [1,2]
-parameterListLineWidth = [8,7,6]
+parameterListLineWidth = [10,8,7,6]
 parameterListLineExtend = ["","extend_line"]
 
 # Listen erstellen (ohne Inhalt)
@@ -38,11 +38,11 @@ def Auswertung(kombination, dateiName):
         # Nimmt das geöffnete Bild
         imp = IJ.getImage()
         anzahlFrames = imp.getImageStackSize()
-        IJ.runMacro("""run("8-bit");run("Subtract Background...", "rolling=50 light stack");""")
+        IJ.runMacro("""run("8-bit");run("Subtract Background...", "rolling=150 light stack");""")
         command = 'run("Variance...", "radius={} stack");'.format(radius)
         IJ.runMacro(command)
         IJ.runMacro("""run("Invert", "stack")""")
-        command = 'run("Enhance Contrast...", "saturated=5 normalize process_all");'
+        command = 'run("Enhance Contrast...", "saturated=0.35 normalize process_all");'
         IJ.runMacro(command)
         # Avi zwischenspeichern "ridged_cell"
         impRidged = imp.duplicate()
