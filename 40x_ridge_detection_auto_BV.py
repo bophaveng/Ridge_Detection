@@ -10,7 +10,7 @@ listeDateinamen = os.listdir(ordnerName)
 
 # Parameterliste
 parameterListRadius = [1,2]
-parameterListLineWidth = [10,8,7,6]
+parameterListLineWidth = [10,9,8,7,6]
 parameterListLineExtend = ["","extend_line"]
 
 # Listen erstellen (ohne Inhalt)
