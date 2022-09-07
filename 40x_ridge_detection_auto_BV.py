@@ -48,8 +48,15 @@ def Auswertung(kombination, dateiName):
         impRidged = imp.duplicate()
 
         IJ.runMacro(command)
-        command = 'run("Ridge Detection", "line_width={} high_contrast=230 low_contrast=87 darkline {} displayresults method_for_overlap_resolution=NONE minimum_line_length=350 maximum=500 stack");'.format(
-            lineWidth, extend)
+        command = """run("Ridge Detection", 
+                            "line_width={} 
+                            high_contrast=230 
+                            low_contrast=87 
+                            darkline {} 
+                            displayresults 
+                            method_for_overlap_resolution=NONE 
+                            minimum_line_length=350 
+                            maximum=500 stack");""".format(lineWidth, extend)
         IJ.runMacro(command)
         # avi zwischenspeichern "red_ridged_cell"
         impridgedRed = imp.duplicate()
